@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: news-getter-deployment
+  labels:
+    app: news-getter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: news-getter
+  template:
+    metadata:
+      labels:
+        app: news-getter
+    spec:
+      containers:
+      - name: news-getter
+        image: europe-central2-docker.pkg.dev/cryptic-idiom-366009/news-getter/news-getter
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+        env:
+        - name: MONGODB_URI
+          valueFrom:
+            configMapKeyRef:
+              name: mongodbmap  
+              key: MONGODB_URI 
+        - name: RABBITMQ_URI
+          valueFrom:
+            configMapKeyRef:
+              name: mongodbmap  
+              key: RABBITMQ_URI 
+        - name: NEWS_API_KEY
+          valueFrom:
+            configMapKeyRef:
+              name: mongodbmap  
+              key: NEWS_API_KEY 
+        ports:
+        - containerPort: 15672

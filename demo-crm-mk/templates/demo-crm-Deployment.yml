@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-crm-deployment
+  labels:
+    app: demo-crm
+spec:
+  replicas: {{.Values.deployment.replicaCount}}
+  selector:
+    matchLabels:
+      app: demo-crm
+  template:
+    metadata:
+      labels:
+        app: demo-crm
+    spec:
+      containers:
+      - name: demo-crm
+        image: {{.Values.deployment.image}}
+        resources:
+          requests:
+            memory: {{.Values.resources.requests.memory}}
+            cpu: {{.Values.resources.requests.cpu}}
+          limits:
+            memory: {{.Values.resources.limits.memory}}
+            cpu: {{.Values.resources.limits.cpu}}
+        env:
+        - name: MONGODB_URI
+          valueFrom:
+            configMapKeyRef:
+              name: mongodbmap  
+              key: MONGODB_URI 
+        - name: RABBITMQ_URI
+          valueFrom:
+            configMapKeyRef:
+              name: mongodbmap  
+              key: RABBITMQ_URI 
+        - name: databasePort
+          valueFrom:
+            configMapKeyRef:
+              name: mongodbmap  
+              key: databasePort 
+        - name: databaseHost
+          valueFrom:
+            configMapKeyRef:
+              name: mongodbmap  
+              key: databaseHost 
+        ports:
+        - containerPort: 3000

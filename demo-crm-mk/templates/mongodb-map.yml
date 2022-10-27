@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongodbmap
+data:
+  MONGODB_URI: "mongodb://root:root@demo-crm-mk-mongodb-0.demo-crm-mk-mongodb-headless,demo-crm-mk-mongodb-1.demo-crm-mk-mongodb-headless:27017"
+  RABBITMQ_URI: "amqp://user:password@demo-crm-mk-rabbitmq-0.demo-crm-mk-rabbitmq-headless"
+  databasePort: "27017"
+  databaseHost: "demo-crm-mk-mongodb-headless"
+  NEWS_API_KEY: "6a3f0ab4583943608b49fa14badc4ed6"
