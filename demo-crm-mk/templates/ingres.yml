@@ -13,7 +13,7 @@ spec:
   - host: mateuszcowsay.ddns.net
     http:
       paths:
-      - path: /
+      - path: /demo
         pathType: Prefix 
         backend:
           service:
