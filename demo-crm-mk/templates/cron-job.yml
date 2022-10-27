@@ -31,6 +31,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: clear
+  namespace: default
 spec:
   schedule: "* 0 * * *"
   jobTemplate:
