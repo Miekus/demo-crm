@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - mateuszcowsay.ddns.net
+    - mateuszkdeveleap.ddns.net
     secretName: letsencrypt-tls
   rules:
-  - host: mateuszcowsay.ddns.net
+  - host: mateuszkdeveleap.ddns.net
     http:
       paths:
       - path: /demo
