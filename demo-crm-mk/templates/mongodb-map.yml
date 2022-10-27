@@ -4,8 +4,8 @@ metadata:
   name: mongodbmap
   namespace: default
 data:
-  MONGODB_URI: "mongodb://root:root@demo-crm-mk-mongodb-0.demo-crm-mk-mongodb-headless,demo-crm-mk-mongodb-1.demo-crm-mk-mongodb-headless:27017"
-  RABBITMQ_URI: "amqp://user:password@demo-crm-mk-rabbitmq-0.demo-crm-mk-rabbitmq-headless"
+  MONGODB_URI: "mongodb://root:root@demo-mongodb-0.demo-mongodb-headless,demo-mongodb-1.demo-mongodb-headless:27017"
+  RABBITMQ_URI: "amqp://user:password@demo-rabbitmq-0.demo-rabbitmq-headless"
   databasePort: "27017"
-  databaseHost: "demo-crm-mk-mongodb-headless"
+  databaseHost: "demo-mongodb-headless"
   NEWS_API_KEY: "6a3f0ab4583943608b49fa14badc4ed6"
