@@ -8,4 +8,5 @@ data:
   RABBITMQ_URI: "amqp://user:password@demo-rabbitmq-0.demo-rabbitmq-headless"
   databasePort: "27017"
   databaseHost: "demo-mongodb-headless"
-  NEWS_API_KEY: "6a3f0ab4583943608b49fa14badc4ed6"
+  NEWS_API_KEY: "6a3f0ab4583943608b49fa14badc4ed6" #change
+  
