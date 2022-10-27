@@ -4,6 +4,7 @@ metadata:
   annotations:
       kubernetes.io/ingress.class: "nginx"
   name: ingress
+  namespace: default
 spec:
   tls:
   - hosts:
