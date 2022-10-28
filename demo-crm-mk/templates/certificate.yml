@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: letsencrypt-tls
+  annotations:
+  "helm.sh/hook": post-install
+  "helm.sh/hook-weight": "1"
+spec:
+  dnsNames:
+  - mateuszkdeveleap.ddns.net
+  secretName: letsencrypt-tls
+  issuerRef:
+    name: letsencrypt-claster-issuer
+    kind: ClusterIssuer 

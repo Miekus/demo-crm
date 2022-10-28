@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-claster-issuer
+  namespace: cert-manager
+    annotations:
+    # This is what defines this resource as a hook. Without this line, the
+    # job is considered part of the release.
+    "helm.sh/hook": post-install
+    "helm.sh/hook-weight": "1"
+spec:
+  acme:
+    email: mateusz.kiszka95@gmail.com
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-claster-issuer-key
+    # Add a single challenge solver, HTTP01 using nginx
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
