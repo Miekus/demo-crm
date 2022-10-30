@@ -6,7 +6,7 @@ metadata:
   name: ingress
   namespace: default 
   "helm.sh/hook": post-install
-  "helm.sh/hook-weight": "2"
+  # "helm.sh/hook-weight": "2"
 spec:
   tls:
   - hosts:

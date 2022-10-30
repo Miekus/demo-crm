@@ -4,7 +4,7 @@ metadata:
   name: letsencrypt-tls
   annotations:
   "helm.sh/hook": post-install
-  "helm.sh/hook-weight": "1"
+  # "helm.sh/hook-weight": "1"
 spec:
   dnsNames:
   - mateuszkdeveleap.ddns.net
