@@ -12,7 +12,6 @@ spec:
   - hosts:
     - mateuszkdeveleap.ddns.net
     secretName: letsencrypt-tls
-  rules:
   - host: mateuszkdeveleap.ddns.net
     http:
       paths:
